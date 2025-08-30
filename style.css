@@ -67,6 +67,20 @@ header
     align-items: center;
     transition: 0.5s;
 }
+header .left-section 
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header .social-icons 
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 0; /* Remove a margem direita anterior */
+}
+
 header .social-icons {
     display: flex;
     align-items: center;
@@ -389,11 +403,20 @@ img
 /*Responsive*/
 @media (max-width: 991px)
 {
-    header,
+    header
+    {
+        padding: 15px 20px; /* Reduzir padding no mobile */
+    }
     header.sticky
     {
-        padding: 20px 50px;
-        z-index: 1000;
+        padding: 15px 20px;
+    }
+    header .logo
+    {
+        max-width: calc(100% - 60px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .menu
     {
@@ -424,13 +447,18 @@ img
     }
     .toggle
     {
-        width: 40px;
-        height: 40px;
+        top: 50%;
+        right: 20px;
+        position: absolute;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
         background: url(imagens/menu1.svg);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 30px;
+        background-size: 20px;
         cursor: pointer;
+        z-index: 1001; /* Garantir que fique acima de outros elementos */
         transition: all 0.3s ease;
     }
     .toggle.active
