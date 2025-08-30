@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Certificados - Portfolio Diego</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* [Mantém todos os estilos anteriores] */
+        
+        /* NOVOS ESTILOS PARA O MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            display: block;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .close-modal:hover {
+            color: #2196f3;
+        }
+        
+        .modal-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            margin: 0 20px;
+            border-radius: 4px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Responsivo para o modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 95%;
+                margin: 10% auto;
+            }
+            
+            .close-modal {
+                top: 10px;
+                right: 15px;
+                font-size: 30px;
+            }
+            
+            .modal-caption {
+                font-size: 14px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
+            <li><a href="index.html#work" onclick="toggleMenu();">Work</a></li>
+            <li><a href="index.html#testimonial" onclick="toggleMenu();">Testimonial</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="curriculo.html" onclick="toggleMenu();">Currículo</a></li>
+            <li><a href="projetos-pessoais.html" onclick="toggleMenu();">Projetos pessoais</a></li>
+            <li><a href="certificados.html" onclick="toggleMenu();">Certificados</a></li>
+        </ul>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Certificados</h2>
+            <h3>Minhas qualificações e conquistas acadêmicas</h3>
+        </div>
+    </section>
+
+    <section class="certificates">
+        <div class="heading">
+            <h2>Meus Certificados</h2>
+            <p>Conheça minhas certificações e cursos na área de tecnologia</p>
+        </div>
+        
+        <div class="certificate-grid">
+            <!-- Certificado 1 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Análise e Desenvolvimento de Sistemas</h3>
+                    <div class="certificate-issuer">UMC</div>
+                    <div class="certificate-date">Conclusão: Dezembro 2026</div>
+                    <p class="certificate-description">Graduação em andamento com foco em desenvolvimento de software, banco de dados e engenharia de software.</p>
+                    <div class="certificate-links">
+                        <a href="#" class="certificate-link" onclick="openModal('modal1'); return false;">
+                            <i class="fas fa-certificate"></i> Ver Certificado
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificado 2 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Análise de Dados</h3>
+                    <div class="certificate-issuer">DSA</div>
+                    <div class="certificate-date">Concluído: 2025</div>
+                    <p class="certificate-description">Fundamentos de Linguagem Python para Análises de Dados e Data Sciencie - Nível Introdutório.</p>
+                    <div class="certificate-links">
+                        <a href="#" class="certificate-link" onclick="openModal('modal2'); return false;">
+                            <i class="fas fa-certificate"></i> Ver Certificado
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificado 3 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Lógica de Programação</h3>
+                    <div class="certificate-issuer">DSA</div>
+                    <div class="certificate-date">Concluído: 2025</div>
+                    <p class="certificate-description">Fundamentos de Data Science e Inteligência Artificial</p>
+                    <div class="certificate-links">
+                        <a href="#" class="certificate-link" onclick="openModal('modal3'); return false;">
+                            <i class="fas fa-certificate"></i> Ver Certificado
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificado 3 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Cozinheiro Profissional</h3>
+                    <div class="certificate-issuer">IGA</div>
+                    <div class="certificate-date">Concluído: 2021</div>
+                    <p class="certificate-description">Desenvolvimento de precisão técnica, gestão de processos complexos e 
+                    trabalho sob pressão.</p>
+                    <div class="certificate-links">
+                        <a href="#" class="certificate-link" onclick="openModal('modal4'); return false;">
+                            <i class="fas fa-certificate"></i> Ver Certificado
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adicione mais certificados aqui -->
+        </div>
+    </section>
+
+    <!-- MODAIS PARA OS CERTIFICADOS -->
+    <div id="modal1" class="modal">
+        <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+        <img class="modal-content" src="" alt="Certificado UMC">
+        <div class="modal-caption">Certificado de Análise e Desenvolvimento de Sistemas - UNINTER</div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+        <img class="modal-content" src="imagens/certificado1.jpg" alt="Certificado SENAI">
+        <div class="modal-caption">Fundamentos de Linguagem Python para Análises de Dados e Data Sciencie - Nível Introdutório</div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+        <img class="modal-content" src="imagens/certificado2.png" alt="Certificado SENAI">
+        <div class="modal-caption">Fundamentos de Data Science e Inteligência Artificial</div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+        <img class="modal-content" src="imagens/certificado3.jpg" alt="Certificado SENAI">
+        <div class="modal-caption">Certificado de Lógica de Programação - SENAI</div>
+    </div>
+    <!-- Adicione mais modais para cada certificado -->
+
+    <div class="copyright">
+        <p>Copyright © 2025. Todos os direitos reservados.</p>
+    </div>
+    
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    
+    <script type="text/javascript">
+        // Scripts existentes...
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+        
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+        
+        // NOVAS FUNÇÕES PARA OS MODAIS
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Previne scroll
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Libera scroll
+        }
+        
+        // Fechar modal clicando fora da imagem
+        window.onclick = function(event) {
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                var modals = document.querySelectorAll('.modal');
+                modals.forEach(function(modal) {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

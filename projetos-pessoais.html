@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Projetos Pessoais - Portfolio Diego</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a página de projetos */
+        :root {
+            --primary: #2196f3;
+            --primary-glow: rgba(33, 150, 243, 0.4);
+            --accent-purple: #a855f7;
+            --accent-blue: #3b82f6;
+            --radius: 0.75rem;
+            --shadow-elegant: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-elegant-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 20px var(--primary-glow);
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent-blue));
+            --gradient-card: linear-gradient(135deg, #ffffff, #f8fafc);
+            --gradient-card-dark: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+        
+        .projects {
+            padding: 100px;
+            background: #f7f7f7;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: var(--gradient-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-elegant);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elegant-hover), var(--shadow-glow);
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 24px;
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1; 
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .project-description {
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            padding: 4px 10px;
+            background: rgba(33, 150, 243, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 12px;
+            margin-top: auto; 
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(33, 150, 243, 0.2);
+        }
+        
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(33, 150, 243, 0.3);
+        }
+        
+        .project-link.outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .project-link.outline:hover {
+            background: rgba(33, 150, 243, 0.05);
+        }
+        
+        .project-link i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 991px) {
+            .projects {
+                padding: 100px 50px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .projects {
+                padding: 100px 20px;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
+            <li><a href="index.html#work" onclick="toggleMenu();">Work</a></li>
+            <li><a href="index.html#testimonial" onclick="toggleMenu();">Testimonial</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="curriculo.html" onclick="toggleMenu();">Currículo</a></li>
+            <li><a href="projetos-pessoais.html" onclick="toggleMenu();">Projetos pessoais</a></li>
+            <li><a href="certificados.html" onclick="toggleMenu();">Certificados</a></li>
+        </ul>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Projetos Pessoais</h2>
+            <h3>Confira meus principais trabalhos no GitHub</h3>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="heading">
+            <h2>Meus Projetos</h2>
+            <p>Alguns dos meus trabalhos e experimentos de desenvolvimento</p>
+        </div>
+        
+        <div class="project-grid">
+            <!-- Projeto 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagens/JogoDaMemoria.jpg" alt="Nome do Projeto">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Jogo da Memória</h3>
+                    <p class="project-description">Um jogo simples utilizandos HTML, CSS e JavaScript.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/diegoeiti/Jogo-da-Memoria" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                        <a href="https://diegoeiti.github.io/Jogo-da-Memoria/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projeto 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagens/TaskMaster.png" alt="Nome do Projeto">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Planejador Digital</h3>
+                    <p class="project-description">Um gerenciador de tarefas feito com Flask.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/diegoeiti/render-flask-deployment" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                        <a href="https://renderflaskcrud-sfdi.onrender.com/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projeto 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagens/SiteReceitas.jpg" alt="Nome do Projeto">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Site de Receitas</h3>
+                    <p class="project-description">Um site simples de receitas deliciosas.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/diegoeiti/Logica-Programacao/tree/main/Aula%2007%20Criando%20uma%20Pagina%20HTML" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                        <a href="https://diegoeiti.github.io/Logica-Programacao/Aula%2007%20Criando%20uma%20Pagina%20HTML/index.html" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projeto 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagens/FlapBird.jpg" alt="Nome do Projeto">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Flap Bird Game</h3>
+                    <p class="project-description">Um jogo clássico feito com HTML, CSS e JavaScript.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/diegoeiti/Flap-Bird-Game" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                        <a href="https://diegoeiti.github.io/Flap-Bird-Game/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright © 2025. Todos os direitos reservados.</p>
+    </div>
+    
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    
+    <script type="text/javascript">
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+        
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+</body>
+</html>

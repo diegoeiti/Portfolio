@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Página 1 - Portfolio Diego</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="index.html#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
+            <li><a href="index.html#work" onclick="toggleMenu();">Work</a></li>
+            <li><a href="index.html#testimonial" onclick="toggleMenu();">Testimonial</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="curriculo.html" onclick="toggleMenu();">Currículo</a></li>
+            <li><a href="projetos-pessoais.html" onclick="toggleMenu();">Projetos pessoais</a></li>
+            <li><a href="certificados.html" onclick="toggleMenu();">Certificados</a></li>
+        </ul>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Currículo</h2>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>Currículo</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3></h3>
+                <p></p>
+            </div>
+            <div class="w50">
+                <img src="imagens/imagem-pagina1.jpg" alt="Imagem da Página 1">
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright © 2025. Todos os direitos reservados.</p>
+    </div>
+    
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    
+    <script type="text/javascript">
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+        
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+</body>
+</html>
