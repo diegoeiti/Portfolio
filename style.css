@@ -13,7 +13,7 @@ section
 }
 .banner
 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imagens/euIA.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.308)), url(imagens/euIA.jpg);
     position: relative;
     min-height: 100vh;
     background-size: cover;
