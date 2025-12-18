@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* [Mantém todos os estilos anteriores] */
-        
+
         /* NOVOS ESTILOS PARA O MODAL */
         .modal {
             display: none;
@@ -21,7 +22,7 @@
             background-color: rgba(0, 0, 0, 0.9);
             animation: fadeIn 0.3s ease;
         }
-        
+
         .modal-content {
             display: block;
             margin: 5% auto;
@@ -31,7 +32,7 @@
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
             animation: zoomIn 0.3s ease;
         }
-        
+
         .close-modal {
             position: absolute;
             top: 20px;
@@ -43,11 +44,11 @@
             transition: color 0.3s ease;
             z-index: 1001;
         }
-        
+
         .close-modal:hover {
             color: #2196f3;
         }
-        
+
         .modal-caption {
             position: absolute;
             bottom: 20px;
@@ -61,30 +62,42 @@
             margin: 0 20px;
             border-radius: 4px;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
-        
+
         @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         /* Responsivo para o modal */
         @media (max-width: 768px) {
             .modal-content {
                 max-width: 95%;
                 margin: 10% auto;
             }
-            
+
             .close-modal {
                 top: 10px;
                 right: 15px;
                 font-size: 30px;
             }
-            
+
             .modal-caption {
                 font-size: 14px;
                 margin: 0 10px;
@@ -92,12 +105,14 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="left-section">
             <a href="index.html" class="logo">Portfolio</a>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
@@ -110,7 +125,7 @@
         <ul class="menu">
             <li><a href="index.html" onclick="toggleMenu();">Home</a></li>
             <li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
-<!--             <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
+            <!--             <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
             <li><a href="index.html#work" onclick="toggleMenu();">Work</a></li>
             <li><a href="index.html#testimonial" onclick="toggleMenu();">Testimonial</a></li> -->
             <li><a href="index.html#contact" onclick="toggleMenu();">Contact</a></li>
@@ -132,7 +147,7 @@
             <h2>Meus Certificados</h2>
             <p>Conheça minhas certificações e cursos na área de tecnologia</p>
         </div>
-        
+
         <div class="certificate-grid">
             <!-- Certificado 1 -->
             <div class="certificate-card">
@@ -143,7 +158,8 @@
                     <h3 class="certificate-title">Análise e Desenvolvimento de Sistemas</h3>
                     <div class="certificate-issuer">UMC</div>
                     <div class="certificate-date">Conclusão: Dezembro 2026</div>
-                    <p class="certificate-description">Graduação em andamento com foco em desenvolvimento de software, banco de dados e engenharia de software.</p>
+                    <p class="certificate-description">Graduação em andamento com foco em desenvolvimento de software,
+                        banco de dados e engenharia de software.</p>
                     <div class="certificate-links">
                         <a href="#" class="certificate-link" onclick="openModal('modal1'); return false;">
                             <i class="fas fa-certificate"></i> Ver Certificado
@@ -151,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Certificado 2 -->
             <div class="certificate-card">
                 <div class="certificate-image">
@@ -161,7 +177,8 @@
                     <h3 class="certificate-title">Análise de Dados</h3>
                     <div class="certificate-issuer">DSA</div>
                     <div class="certificate-date">Concluído: 2025</div>
-                    <p class="certificate-description">Fundamentos de Linguagem Python para Análises de Dados e Data Sciencie - Nível Introdutório.</p>
+                    <p class="certificate-description">Fundamentos de Linguagem Python para Análises de Dados e Data
+                        Sciencie - Nível Introdutório.</p>
                     <div class="certificate-links">
                         <a href="#" class="certificate-link" onclick="openModal('modal2'); return false;">
                             <i class="fas fa-certificate"></i> Ver Certificado
@@ -176,7 +193,7 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <div class="certificate-content">
-                    <h3 class="certificate-title">Lógica de Programação</h3>
+                    <h3 class="certificate-title">Fundamentos de Data Science e Inteligência Artificial</h3>
                     <div class="certificate-issuer">DSA</div>
                     <div class="certificate-date">Concluído: 2025</div>
                     <p class="certificate-description">Fundamentos de Data Science e Inteligência Artificial</p>
@@ -197,8 +214,9 @@
                     <h3 class="certificate-title">Cozinheiro Profissional</h3>
                     <div class="certificate-issuer">IGA</div>
                     <div class="certificate-date">Concluído: 2021</div>
-                    <p class="certificate-description">Desenvolvimento de precisão técnica, gestão de processos complexos e 
-                    trabalho sob pressão.</p>
+                    <p class="certificate-description">Desenvolvimento de precisão técnica, gestão de processos
+                        complexos e
+                        trabalho sob pressão.</p>
                     <div class="certificate-links">
                         <a href="#" class="certificate-link" onclick="openModal('modal4'); return false;">
                             <i class="fas fa-certificate"></i> Ver Certificado
@@ -206,7 +224,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Adicione mais certificados aqui -->
         </div>
     </section>
@@ -221,7 +239,8 @@
     <div id="modal2" class="modal">
         <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
         <img class="modal-content" src="imagens/certificado1.jpg" alt="Certificado SENAI">
-        <div class="modal-caption">Fundamentos de Linguagem Python para Análises de Dados e Data Sciencie - Nível Introdutório</div>
+        <div class="modal-caption">Fundamentos de Linguagem Python para Análises de Dados e Data Sciencie - Nível
+            Introdutório</div>
     </div>
 
     <div id="modal3" class="modal">
@@ -240,58 +259,58 @@
     <div class="copyright">
         <p>Copyright © 2025. Todos os direitos reservados.</p>
     </div>
-    
+
     <div id="progressbar"></div>
     <div id="scrollPath"></div>
-    
+
     <script type="text/javascript">
         // Scripts existentes...
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
         });
-        
-        function toggleMenu(){
+
+        function toggleMenu() {
             var menuToggle = document.querySelector('.toggle');
             var menu = document.querySelector('.menu');
             menuToggle.classList.toggle('active');
             menu.classList.toggle('active');
         }
-        
+
         let progress = document.getElementById('progressbar');
         let totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = function(){
+        window.onscroll = function () {
             let progressHeight = (window.pageYOffset / totalHeight) * 100;
             progress.style.height = progressHeight + "%";
         }
-        
+
         // NOVAS FUNÇÕES PARA OS MODAIS
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'block';
             document.body.style.overflow = 'hidden'; // Previne scroll
         }
-        
+
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
             document.body.style.overflow = 'auto'; // Libera scroll
         }
-        
+
         // Fechar modal clicando fora da imagem
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             var modals = document.querySelectorAll('.modal');
-            modals.forEach(function(modal) {
+            modals.forEach(function (modal) {
                 if (event.target == modal) {
                     modal.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
             });
         }
-        
+
         // Fechar com tecla ESC
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 var modals = document.querySelectorAll('.modal');
-                modals.forEach(function(modal) {
+                modals.forEach(function (modal) {
                     if (modal.style.display === 'block') {
                         modal.style.display = 'none';
                         document.body.style.overflow = 'auto';
@@ -301,4 +320,5 @@
         });
     </script>
 </body>
+
 </html>
