@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -7,12 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="left-section">
             <a href="index.html" class="logo">Portfolio</a>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
@@ -25,7 +28,7 @@
         <ul class="menu">
             <li><a href="index.html" onclick="toggleMenu();">Home</a></li>
             <li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
-<!--             <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
+            <!--             <li><a href="index.html#services" onclick="toggleMenu();">Services</a></li>
             <li><a href="index.html#work" onclick="toggleMenu();">Work</a></li>
             <li><a href="index.html#testimonial" onclick="toggleMenu();">Testimonial</a></li> -->
             <li><a href="index.html#contact" onclick="toggleMenu();">Contact</a></li>
@@ -42,72 +45,73 @@
     </section>
 
     <section class="curriculo" id="curriculo">
-    <div class="heading">
-        <h2>Currículo</h2>
-        <p>Confira minha trajetória e experiência profissional</p>
-    </div>
-    
-    <div class="curriculo-container">
-        <!-- Visualização do currículo incorporado -->
-        <div class="curriculo-viewer">
-            <iframe src="curriculo.pdf" width="100%" height="600px">
-                Seu navegador não suporta visualização de PDF. 
-                <a href="curriculo.pdf" download>Clique aqui para baixar</a>.
-            </iframe>
+        <div class="heading">
+            <h2>Currículo</h2>
+            <p>Confira minha trajetória e experiência profissional</p>
         </div>
-        
-        <!-- Botão de download -->
-        <div class="download-btn">
-            <a href="curriculo.pdf" download class="btn">
-                <i class="fas fa-download"></i> Baixar Currículo (PDF)
-            </a>
+
+        <div class="curriculo-container">
+            <!-- Visualização do currículo incorporado -->
+            <div class="curriculo-viewer">
+                <iframe src="curriculo.pdf" width="100%" height="600px">
+                    Seu navegador não suporta visualização de PDF.
+                    <a href="curriculo.pdf" download>Clique aqui para baixar</a>.
+                </iframe>
+            </div>
+
+            <!-- Botão de download -->
+            <div class="download-btn">
+                <a href="curriculo.pdf" download class="btn">
+                    <i class="fas fa-download"></i> Baixar Currículo (PDF)
+                </a>
+            </div>
+
+            <!-- Informações resumidas (opcional) -->
+            <div class="resumo-curriculo">
+                <h3>Resumo Profissional</h3>
+                <div class="info-box">
+                    <h4><i class="fas fa-graduation-cap"></i> Formação</h4>
+                    <p>Análise e Desenvolvimento de Sistemas - Cursando</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-briefcase"></i> Objetivo</h4>
+                    <p>Estágio/Trainee em Desenvolvimento Backend</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fas fa-code"></i> Principais Competências</h4>
+                    <p>JavaScript, Java, PHP, Python e SQL</p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Informações resumidas (opcional) -->
-        <div class="resumo-curriculo">
-            <h3>Resumo Profissional</h3>
-            <div class="info-box">
-                <h4><i class="fas fa-graduation-cap"></i> Formação</h4>
-                <p>Análise e Desenvolvimento de Sistemas - Cursando</p>
-            </div>
-            <div class="info-box">
-                <h4><i class="fas fa-briefcase"></i> Objetivo</h4>
-                <p>Estágio/Trainee em Desenvolvimento Full Stack</p>
-            </div>
-            <div class="info-box">
-                <h4><i class="fas fa-code"></i> Principais Competências</h4>
-                <p>HTML, CSS, JavaScript, React, Node.js, Banco de Dados</p>
-            </div>
-        </div>
-    </div>
     </section>
 
     <div class="copyright">
         <p>Copyright © 2025. Todos os direitos reservados.</p>
     </div>
-    
+
     <div id="progressbar"></div>
     <div id="scrollPath"></div>
-    
+
     <script type="text/javascript">
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
         });
-        
-        function toggleMenu(){
+
+        function toggleMenu() {
             var menuToggle = document.querySelector('.toggle');
             var menu = document.querySelector('.menu');
             menuToggle.classList.toggle('active');
             menu.classList.toggle('active');
         }
-        
+
         let progress = document.getElementById('progressbar');
         let totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = function(){
+        window.onscroll = function () {
             let progressHeight = (window.pageYOffset / totalHeight) * 100;
             progress.style.height = progressHeight + "%";
         }
     </script>
 </body>
+
 </html>
