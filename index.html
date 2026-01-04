@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -8,12 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="left-section">
             <a href="#" class="logo">Portfolio</a>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/diego-eiti-nakashima-fortunato-83852b227/" target="_blank"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/diegoeiti" target="_blank" aria-label="GitHub">
@@ -26,7 +29,7 @@
         <ul class="menu">
             <li><a href="#home" onclick="toggleMenu();">Home</a></li>
             <li><a href="#about" onclick="toggleMenu();">Sobre</a></li>
-<!--        <li><a href="#services" onclick="toggleMenu();">Services</a></li>
+            <!--        <li><a href="#services" onclick="toggleMenu();">Services</a></li>
             <li><a href="#work" onclick="toggleMenu();">Work</a></li>
             <li><a href="#testimonial" onclick="toggleMenu();">Testimonial</a></li> -->
             <li><a href="#contact" onclick="toggleMenu();">Contato</a></li>
@@ -39,7 +42,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>Olá, sou o <br><span>Diego Eiti.</span></h2>
-            <h3>Sou um desenvolvedor web FullStack</h3>
+            <h3>Sou um desenvolvedor web </h3>
             <a href="#about" class="btn">Sobre mim</a>
         </div>
     </section>
@@ -51,13 +54,21 @@
         <div class="content">
             <div class="contentBx w50">
                 <h3>Sou um desenvolvedor web FullStack</h3>
-                <p>Olá! Me chamo Diego e sou um entusiasta da tecnologia em constante evolução. Atualmente, estou cursando Análise e Desenvolvimento de Sistemas e descobri minha paixão por criar soluções que unem criatividade e funcionalidade.
-                <br>
-                <br>
-                Meu foco está no desenvolvimento full stack, onde posso atuar tanto no front-end quanto no back-end, criando aplicações web completas e significativas. Adoro transformar ideias em código e ver projetos ganhando vida através da programação.
-                <br>
-                <br>
-                Estou em busca da minha primeira oportunidade profissional como estagiário ou trainee, onde eu possa aprender com experiências reais, contribuir com equipes e crescer junto com a empresa. Acredito no poder da colaboração e estou animado para fazer parte de um ambiente onde eu possa evoluir tecnicamente e como profissional.</p>
+                <p>Olá! Me chamo Diego e sou um entusiasta da tecnologia em constante evolução. Atualmente, estou
+                    cursando Análise e Desenvolvimento de Sistemas e descobri minha paixão por criar soluções que unem
+                    criatividade e funcionalidade.
+                    <br>
+                    <br>
+                    Meu foco está no desenvolvimento full stack, onde posso atuar tanto no front-end quanto no back-end,
+                    criando aplicações web completas e significativas. Adoro transformar ideias em código e ver projetos
+                    ganhando vida através da programação.
+                    <br>
+                    <br>
+                    Estou em busca da minha primeira oportunidade profissional como estagiário ou trainee, onde eu possa
+                    aprender com experiências reais, contribuir com equipes e crescer junto com a empresa. Acredito no
+                    poder da colaboração e estou animado para fazer parte de um ambiente onde eu possa evoluir
+                    tecnicamente e como profissional.
+                </p>
             </div>
             <div class="w50">
                 <img src="imagens/imagem.jfif" class="">
@@ -66,7 +77,7 @@
         </div>
     </section>
 
-<!--     <section class="services" id="services">
+    <!--     <section class="services" id="services">
         <div class="heading white">
             <h2>Our Services</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing. </p>
@@ -80,7 +91,7 @@
         </div>
     </section> -->
 
-<!--     <section class="work" id="work">
+    <!--     <section class="work" id="work">
         <div class="heading">
             <h2>Our Latest Work</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing. </p>
@@ -103,7 +114,7 @@
         </div>
     </section> -->
 
-<!--     <section class="testimonial" id="testimonial">
+    <!--     <section class="testimonial" id="testimonial">
         <div class="heading">
             <h2>Testimonial</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing. </p>
@@ -179,12 +190,12 @@
 
 
     <script type="text/javascript">
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
         });
-        
-        function toggleMenu(){
+
+        function toggleMenu() {
             var menuToggle = document.querySelector('.toggle');
             var menu = document.querySelector('.menu');
             menuToggle.classList.toggle('active');
@@ -195,11 +206,11 @@
         function updateProgressBar() {
             let progress = document.getElementById('progressbar');
             if (!progress) return;
-            
+
             // Usa documentElement para cálculo mais preciso
             let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             let progressHeight = (window.pageYOffset / totalHeight) * 100;
-            
+
             // Garante que não passe de 100%
             progress.style.height = Math.min(progressHeight, 100) + "%";
         }
@@ -211,16 +222,17 @@
 
         // Observa mudanças no conteúdo da página
         const observer = new MutationObserver(updateProgressBar);
-        observer.observe(document.body, { 
-            childList: true, 
+        observer.observe(document.body, {
+            childList: true,
             subtree: true,
             attributes: true
         });
 
         // Inicializa quando a página carrega
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             updateProgressBar();
         });
     </script>
 </body>
+
 </html>
